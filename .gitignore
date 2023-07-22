@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/client/node_modules
 /.pnp
 .pnp.js
 
@@ -12,6 +13,10 @@
 /build
 
 # misc
+/client/src/noteAI/__pycache__
+/client/src/noteAI/config.py
+.env
+/client/.env
 .DS_Store
 .env.local
 .env.development.local
