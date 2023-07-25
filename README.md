@@ -8,3 +8,6 @@
 
    
 ![image](https://github.com/MeharSinghShienh/NoteAI/assets/45316466/09775494-98bc-4743-933e-21642c32675d)
+
+
+Deployed version of the App can also be found here https://notesai-284cad4e431c.herokuapp.com/
