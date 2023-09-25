@@ -1,3 +1,12 @@
+var width = document.documentElement.clientWidth;
+
+let sbw = 0;
+if (width < 500) {
+  sbw = "100px";
+} else {
+  sbw = "300px";
+}
+
 const styles = (theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
@@ -14,7 +23,7 @@ const styles = (theme) => ({
     padding: "5px",
     fontSize: "24px",
     width: "calc(100% - 300px)",
-    backgroundColor: "#29487d",
+    backgroundColor: "#004ed4",
     color: "white",
     paddingLeft: "50px",
   },
@@ -28,6 +37,7 @@ const styles = (theme) => ({
   },
   editorContainer: {
     height: "100vh",
+    width: "150%",
     boxSizing: "border-box",
   },
 });

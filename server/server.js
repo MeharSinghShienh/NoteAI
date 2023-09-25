@@ -4,6 +4,8 @@ const multer = require("multer");
 const bodyParser = require("body-parser");
 const { spawn } = require("child_process");
 
+const path = require("path");
+
 const app = express();
 
 const fs = require("fs");
@@ -36,13 +38,14 @@ app.post("/extract-text", (req, res) => {
   });
 });
 
-// run python script
+//openai==0.27.8
+// run python scripts
 app.post("/readPython", (request, response) => {
   // Reading Python files
   var dataToSend;
   // spawn new child process to call the python script
   const python = spawn("python", [
-    "../client/src/noteAI/noteai.py",
+    "python/NoteAI/noteai.py",
     request.body.data,
   ]);
 
@@ -61,6 +64,8 @@ app.post("/readPython", (request, response) => {
   });
 });
 
-app.listen(5000, () => {
+app.use(express.static(path.join(__dirname + "/public")));
+
+app.listen(process.env.PORT || 5000, () => {
   console.log("Server started on port 5000");
 });

@@ -1,3 +1,12 @@
+var width = document.documentElement.clientWidth;
+
+let sbw = 0;
+if (width < 500) {
+  sbw = "120px";
+} else {
+  sbw = "300px";
+}
+
 const styles = (theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
@@ -29,7 +38,7 @@ const styles = (theme) => ({
   },
   sidebarContainer: {
     marginTop: "0px",
-    width: "300px",
+    width: sbw,
     height: "84vh",
     boxSizing: "border-box",
     float: "left",

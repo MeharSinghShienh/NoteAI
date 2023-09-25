@@ -1,3 +1,12 @@
+var width = document.documentElement.clientWidth;
+
+let sbw = 0;
+if (width < 500) {
+  sbw = "100px";
+} else {
+  sbw = "300px";
+}
+
 const styles = (theme) => ({
   main: {
     width: "auto",

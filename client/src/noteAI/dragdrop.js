@@ -37,7 +37,7 @@ class DragDropFileComponent extends React.Component {
       const formData = new FormData();
       formData.append("pdfFile", e.dataTransfer.files[0]);
 
-      fetch("http://localhost:5000/extract-text", {
+      fetch("/extract-text", {
         method: "post",
         body: formData,
       })
@@ -45,7 +45,7 @@ class DragDropFileComponent extends React.Component {
           return response.text();
         })
         .then((extractedText) => {
-          fetch("http://localhost:5000/readPython", {
+          fetch("/readPython", {
             method: "post",
             headers: {
               "Content-Type": "application/json",
@@ -69,7 +69,7 @@ class DragDropFileComponent extends React.Component {
       const formData = new FormData();
       formData.append("pdfFile", e.target.files[0]);
 
-      fetch("http://localhost:5000/extract-text", {
+      fetch("/extract-text", {
         method: "post",
         body: formData,
       })
@@ -77,7 +77,7 @@ class DragDropFileComponent extends React.Component {
           return response.text();
         })
         .then((extractedText) => {
-          fetch("http://localhost:5000/readPython", {
+          fetch("/readPython", {
             method: "post",
             headers: {
               "Content-Type": "application/json",
@@ -102,7 +102,7 @@ class DragDropFileComponent extends React.Component {
   render() {
     return (
       <form
-        id="form-file-upload"
+        className="form-file-upload"
         onDragEnter={this.handleDrag}
         onSubmit={(e) => e.preventDefault()}
       >
@@ -120,7 +120,7 @@ class DragDropFileComponent extends React.Component {
           className={this.state.dragActive ? "drag-active" : ""}
         >
           <div>
-            <p style={{ fontSize: 30, margin: 10 }}>
+            <p style={{ fontSize: 20, margin: 10 }}>
               <b>NoteAI</b>
             </p>
             <button className="upload-button" onClick={this.onButtonClick}>
